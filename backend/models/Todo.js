@@ -8,10 +8,11 @@ const todoSchema = new mongoose.Schema(
       trim: true,
     },
     description: {
-      type: String,
-      trim: true,
-      default: '',
-    },
+  type: String,
+  trim: true,
+  default: '',
+  maxlength: [200, 'Description cannot exceed 200 characters'],
+},
     status: {
       type: String,
       enum: ['pending', 'completed'],
